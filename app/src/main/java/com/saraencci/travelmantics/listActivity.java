@@ -90,6 +90,8 @@ public class listActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
+
+
         FirebaseUtil.openFbReference("Traveldeals", this);
         RecyclerView rvDeals=(RecyclerView) findViewById(R.id.rvDeals);
         final DealAdapter adaptor =new DealAdapter();

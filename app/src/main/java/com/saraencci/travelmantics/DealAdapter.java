@@ -108,7 +108,8 @@ public class DealAdapter extends RecyclerView.Adapter<DealAdapter.DealViewHolder
             tvDescription.setText(deal.getDescription());
             tvPrice.setText(deal.getPrice());
             String temp=deal.getImgUrl();
-            showImage(deal.getImgUrl());
+            Picasso.get().load(temp).into(imageDeal);
+           // showImage(deal.getImgUrl());
 
         }
 
@@ -124,9 +125,9 @@ public class DealAdapter extends RecyclerView.Adapter<DealAdapter.DealViewHolder
 
         private void showImage(String url) {
             if (url != null && url.isEmpty()==false) {
-                Picasso.with(imageDeal.getContext())
+                Picasso.get()
                         .load(url)
-                        .resize(160, 160)
+                        .resize(110, 110)
                         .centerCrop()
                         .into(imageDeal);
             }
